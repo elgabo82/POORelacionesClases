@@ -18,17 +18,26 @@ public class Propietario {
     private String apellidos;
     
     // Relación 1 a N
-    private List<Auto> auto;
+    private List<Auto> listaAutos;
 
     public Propietario() {
     }
 
-    public Propietario(Long id, String nombres, String apellidos) {
+    public Propietario(Long id, String nombres, String apellidos, List<Auto> listaAutos) {
         this.id = id;
         this.nombres = nombres;
         this.apellidos = apellidos;
+        this.listaAutos = listaAutos;
     }
 
+    public List<Auto> getListAutos() {
+        return listaAutos;
+    }
+
+    public void setListAutos(List<Auto> listaAutos) {
+        this.listaAutos = listaAutos;
+    }
+    
     public Long getId() {
         return id;
     }
@@ -52,7 +61,11 @@ public class Propietario {
     public void setApellidos(String apellidos) {
         this.apellidos = apellidos;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        //return "Propietario{" + "id=" + id + ", nombres=" + nombres + ", apellidos=" + apellidos + ", listaAutos=" + listaAutos + '}';
+        return nombres + " " + apellidos + " es propietario de: \n" + listaAutos;
+    }
     
 }

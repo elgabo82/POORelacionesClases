@@ -15,30 +15,23 @@ public class Auto {
     private long id;
     private String marca;
     private String modelo;
-    
+    private String placa;
+    private int anioFabricacion;
     // Atributo que representa la relación
-    // Objeto que representa el 1a1
+    // Objeto que representa el 1a1    
     private Propietario propietario;
 
     public Auto() {
     }
 
-    public Auto(long id, String marca, String modelo, Propietario propietario) {
+    public Auto(long id, String marca, String modelo, String placa, int anioFabricacion, Propietario propietario) {
         this.id = id;
         this.marca = marca;
         this.modelo = modelo;
+        this.placa = placa;
+        this.anioFabricacion = anioFabricacion;
         this.propietario = propietario;
-    }
-
-    public Propietario getPropietario() {
-        return propietario;
-    }
-
-    public void setPropietario(Propietario propietario) {
-        this.propietario = propietario;
-    }
-
-    
+    }    
 
     public long getId() {
         return id;
@@ -63,6 +56,40 @@ public class Auto {
     public void setModelo(String modelo) {
         this.modelo = modelo;
     }
+
+    public Propietario getPropietario() {
+        return propietario;
+    }
+
+    public void setPropietario(Propietario propietario) {
+        this.propietario = propietario;
+    }
+
+    public String getPlaca() {
+        return placa;
+    }
+
+    public void setPlaca(String placa) {
+        this.placa = placa;
+    }
+
+    public int getAnioFabricacion() {
+        return anioFabricacion;
+    }
+
+    public void setAnioFabricacion(int anioFabricacion) {
+        this.anioFabricacion = anioFabricacion;
+    }
     
+    
+    @Override
+    public String toString() {
+        //return "Auto{" + "id=" + id + ", marca=" + marca + ", modelo=" + modelo + ", propietario=" + propietario.getId() + '}';
+        return "\nVehículo - Marca: " + marca + " - Modelo: " + modelo + 
+                " - Placa: " + placa + 
+                " Año Fab: " + anioFabricacion +
+                " - ID Propietario: " + propietario.getId();
+    }
+
     
 }
